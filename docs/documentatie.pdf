@@ -1,0 +1,26 @@
+# Portfolio Documentatie & Onderbouwing - WPFW Opdracht 1
+**Student:** Filip Wiśniewski  
+**Datum:** 3 september 2026  
+**Opleiding:** HBO-ICT - De Haagse Hogeschool  
+
+---
+
+## 1. Request / Response - Schema
+
+Hieronder staat het overzicht van de HTTP Request/Response-cyclus die plaatsvindt wanneer een gebruiker de portfoliosite opvraagt in de browser:
+
+```text
+[ Browser / Client ]                                    [ Webserver ]
+         |                                                    |
+         | --- (1) HTTP GET /index.html --------------------> |
+         | <-- (2) 200 OK + index.html (HTML5 code) --------- |
+         |                                                    |
+   (Browser leest HTML, ontdekt CSS & Afbeelding)             |
+         |                                                    |
+         | --- (3) HTTP GET /css/style.css -----------------> |
+         | <-- (4) 200 OK + style.css (CSS3 code) ----------- |
+         |                                                    |
+         | --- (5) HTTP GET /img/profiel.jpg ---------------> |
+         | <-- (6) 200 OK + profiel.jpg (Image data) -------- |
+         |                                                    |
+   (Browser rendert de volledige, gestylde pagina)            |
