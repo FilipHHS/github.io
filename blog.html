@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Mijn Portfolio</title>
+    <title>Blog | Filip's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <h1>Mijn Portfolio</h1>
+        <h1>Filip Wiśniewski</h1>
         <nav>
             <ul>
                 <li><a href="index.html">WhoAmI</a></li>
@@ -20,14 +20,28 @@
     </header>
 
     <main>
-        <section>
+        <section class="blog-overview">
             <h2>Mijn Blogposts</h2>
-            <p>Hier verschijnen binnenkort mijn artikelen en inzichten.</p>
+            <p>Op deze pagina deel ik mijn leerervaringen en inzichten over software development.</p>
+
+            <!-- Elk blogartikel heeft een <article> tag en een semantische <time> tag -->
+            <article class="blog-post">
+                <h3>Mijn eerste ervaringen met Git en HTML5</h3>
+                <p class="meta">Gepubliceerd op: <time datetime="2026-09-03">3 september 2026</time></p>
+                <p>Tijdens de eerste colleges van Web Programming & Frameworks (WPFW) zijn we aan de slag gegaan met de basis van semantische HTML5 en versiebeheer via Git.</p>
+                <p>Het belang van semantische tags zoals <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code> en <code>&lt;article&gt;</code> werd al snel duidelijk voor zowel SEO als toegankelijkheid (screenreaders).</p>
+            </article>
+
+            <article class="blog-post">
+                <h3>Waarom toegankelijkheid (WCAG) belangrijk is</h3>
+                <p class="meta">Gepubliceerd op: <time datetime="2026-09-03">3 september 2026</time></p>
+                <p>Het bouwen van een website stopt niet bij hoe het eruitziet. Voldoende kleurcontrast (WCAG AA) en correcte alt-teksten zorgen ervoor dat iedereen, inclusief mensen met een visuele beperking, de site kan gebruiken.</p>
+            </article>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 - Alle rechten voorbehouden</p>
+        <p>&copy; 2026 Filip Wiśniewski - Alle rechten voorbehouden</p>
     </footer>
 
 </body>
