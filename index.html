@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhoAmI | Filip's Portfolio</title>
+    <title>Filip's Website</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <h1>Filip Wiśniowski</h1>
         <nav>
             <ul>
-                <li><a href="index.html">WhoAmI</a></li>
+                <li><a href="index.html">About me</a></li>
                 <li><a href="projecten.html">Projecten</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
@@ -23,11 +23,33 @@
         <!-- Semantische sectie voor introductie -->
         <section class="intro">
             <h2>Wie ben ik?</h2>
-            <!-- Belangrijk voor toegankelijkheid: een beschrijvende alt-tekst -->
             <img src="img/profiel.jpg" alt="Profielfoto van Filip Wiśniowski" width="320" height="440">
             <p>Hoi mijn naam is Filip, ik ben student op HHS.</p>
         </section>
 
+        <!-- Nieuwe Flexbox Kaarten Sectie -->
+        <section class="cards-section">
+    <h2>Overzicht</h2>
+    <div class="cards-container">
+        <article class="card">
+            <h3>About Me</h3>
+            <p>Lees meer over mijn achtergrond, studie HBO-ICT en vaardigheden.</p>
+            <a href="index.html" class="card-button">Bekijk profiel</a>
+        </article>
+
+        <article class="card">
+            <h3>Projecten</h3>
+            <p>Bekijk de opdrachten en webapplicaties waaraan ik werk.</p>
+            <a href="projecten.html" class="card-button">Bekijk projecten</a>
+        </article>
+
+        <article class="card">
+            <h3>Blog</h3>
+            <p>Lees mijn artikelen over webontwikkeling, HTML5 en Git.</p>
+            <a href="blog.html" class="card-button">Lees artikelen</a>
+        </article>
+    </div>
+</section>
     </main>
 
     <footer>

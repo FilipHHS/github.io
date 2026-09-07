@@ -74,3 +74,29 @@ footer {
         padding: 2.5rem;
     }
 }
+/* Flexbox Kaarten Sectie (Opdracht) */
+.cards-section {
+    margin-top: 2rem;
+}
+
+.cards-container {
+    display: flex;                /* Verplicht: maakt de container een flex-box */
+    justify-content: flex-start;  /* Verplicht: lijnt kaarten horizontaal uit */
+    align-items: stretch;        /* Verplicht: lijnt kaarten verticaal uit */
+    gap: 1rem;                    /* Ruimte tussen de kaarten */
+    flex-wrap: wrap;              /* Zorgt dat kaarten netjes meebewegen bij kleiner scherm */
+}
+
+.card {
+    flex: 1;                      /* Laat de kaarten gelijke breedte aannemen */
+    min-width: 180px;             /* Minimale breedte op kleine schermen */
+    background-color: #1a252f;    /* Cyaan kleur zoals in het voorbeeld */
+    color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
