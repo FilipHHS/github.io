@@ -1,24 +1,36 @@
-/* 1. Reset & Basis */
+/* ==========================================
+   1. Reset & Basis (Met Sticky Footer FIX)
+   ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* 100vh zorgt dat de body altijd de volle hoogte van het scherm inneemt */
+html, body {
+    min-height: 100vh;
+}
+
 body {
+    display: flex;
+    flex-direction: column; /* Stapelt header, main en footer onder elkaar */
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #222222; /* WCAG AA Contrast */
+    color: #222222;
     background-color: #f4f4f4;
     padding: 1rem;
 }
 
-/* 2. Header & Navigatie */
+/* ==========================================
+   2. Header & Navigatie
+   ========================================== */
 header {
     background-color: #1a252f;
     color: #ffffff;
     padding: 1rem;
     text-align: center;
+    border-radius: 6px 6px 0 0;
 }
 
 nav ul {
@@ -33,89 +45,183 @@ nav a {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    padding: 0.5rem;
+    padding: 0.5rem 1rem;
     display: block;
-}
-
-nav a:hover {
-    background-color: #34495e;
     border-radius: 4px;
+    transition: background-color 0.2s ease;
 }
 
-/* 3. Layout */
+nav a:hover,
+nav a.active {
+    background-color: #34495e;
+}
+
+nav a.active {
+    border-bottom: 3px solid #38bdf8;
+}
+
+/* Toegankelijkheid focus-state voor toetsenbord */
+a:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   3. Main & Footer Layout
+   ========================================== */
+/* flex: 1 duwt de footer automatisch naar de bodem op elk scherm */
 main {
+    flex: 1;
+    width: 100%;
     max-width: 1200px;
-    margin: 2rem auto;
+    margin: 0 auto 2rem auto;
     background: #ffffff;
     padding: 1.5rem;
-    border-radius: 6px;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 footer {
     text-align: center;
-    padding: 1rem;
-    color: #666666;
+    padding: 1.5rem 1rem;
+    color: #555555;
     font-size: 0.9rem;
 }
 
-/* 4. Responsive Breekpunten (Criteria 2) */
+/* ==========================================
+   4. Introductie Sectie (Flexbox)
+   ========================================== */
+.intro-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
 
-/* Tablet (~768px) */
+.intro-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.intro-text p {
+    margin-bottom: 0.8rem;
+}
+
+.intro-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* ==========================================
+   5. Kaarten Sectie (Projecten & Overzicht)
+   ========================================== */
+.cards-section {
+    margin-top: 2rem;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card {
+    flex: 1;
+    min-width: 220px;
+    background-color: #1a252f;
+    color: #f4f4f4;
+    padding: 1.5rem;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.card p {
+    margin-bottom: 1rem;
+}
+
+/* Knoppen in kaarten */
+.card-button {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.6rem 1.2rem;
+    background-color: #ffffff;
+    color: #1a252f;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.card-button:hover {
+    background-color: #e2e8f0;
+}
+
+/* ==========================================
+   6. Blog Sectie Stijlen
+   ========================================== */
+.blog-post {
+    background-color: #f8fafc;
+    border-left: 4px solid #1a252f;
+    padding: 1.2rem;
+    margin-top: 1.5rem;
+    border-radius: 0 6px 6px 0;
+}
+
+.blog-post h3 {
+    color: #1a252f;
+    margin-bottom: 0.3rem;
+}
+
+.blog-post .meta {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 0.8rem;
+}
+
+/* ==========================================
+   7. Responsive Breekpunten (Altijd onderaan!)
+   ========================================== */
+
+/* Tablet (~768px en groter) */
 @media (min-width: 768px) {
+    body {
+        font-size: 1.05rem; /* Vul de pagina optisch mooier op */
+    }
+
     nav ul {
-        flex-direction: row; /* Tablet/Desktop: naast elkaar */
+        flex-direction: row;
         justify-content: center;
+    }
+
+    main {
+        padding: 2.5rem;
+    }
+
+    footer {
+        padding: 2rem 1rem;
+        font-size: 0.95rem;
     }
 }
 
 /* Desktop (>= 1024px) */
 @media (min-width: 1024px) {
     main {
-        padding: 2.5rem;
+        padding: 3rem;
     }
-}
-/* Flexbox Kaarten Sectie (Opdracht) */
-.cards-section {
-    margin-top: 2rem;
-}
-
-.cards-container {
-    display: flex;                /* Verplicht: maakt de container een flex-box */
-    justify-content: flex-start;  /* Verplicht: lijnt kaarten horizontaal uit */
-    align-items: stretch;        /* Verplicht: lijnt kaarten verticaal uit */
-    gap: 1rem;                    /* Ruimte tussen de kaarten */
-    flex-wrap: wrap;              /* Zorgt dat kaarten netjes meebewegen bij kleiner scherm */
-}
-
-.card {
-    flex: 1;                      /* Laat de kaarten gelijke breedte aannemen */
-    min-width: 180px;             /* Minimale breedte op kleine schermen */
-    background-color: #1a252f;    /* Cyaan kleur zoals in het voorbeeld */
-    color: #f4f4f4;
-    padding: 1rem;
-    border-radius: 4px;
-}
-
-.card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-/* Introductie sectie layout */
-.intro-container {
-    display: flex;
-    align-items: center; /* Lijnt afbeelding en tekst verticaal in het midden uit */
-    gap: 2rem;            /* Ruimte tussen de foto en de tekst */
-    flex-wrap: wrap;      /* Zorgt dat op mobiel de tekst netjes onder de foto springt */
-    margin-top: 1rem;
-}
-
-.intro-container img {
-    max-width: 100%;
-    height: auto;        /* Behoudt de verhoudingen van je foto */
-    border-radius: 8px;  /* Optioneel: mooie afgeronde hoeken */
-}
-
-.intro-text {
-    flex: 1;             /* Neemt de overige beschikbare ruimte in */
-    min-width: 250px;    /* Voorkomt dat de tekst te smal wordt op kleine schermen */
 }
