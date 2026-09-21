@@ -100,3 +100,22 @@ footer {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
 }
+/* Introductie sectie layout */
+.intro-container {
+    display: flex;
+    align-items: center; /* Lijnt afbeelding en tekst verticaal in het midden uit */
+    gap: 2rem;            /* Ruimte tussen de foto en de tekst */
+    flex-wrap: wrap;      /* Zorgt dat op mobiel de tekst netjes onder de foto springt */
+    margin-top: 1rem;
+}
+
+.intro-container img {
+    max-width: 100%;
+    height: auto;        /* Behoudt de verhoudingen van je foto */
+    border-radius: 8px;  /* Optioneel: mooie afgeronde hoeken */
+}
+
+.intro-text {
+    flex: 1;             /* Neemt de overige beschikbare ruimte in */
+    min-width: 250px;    /* Voorkomt dat de tekst te smal wordt op kleine schermen */
+}
