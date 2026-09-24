@@ -13,40 +13,34 @@
         <nav>
             <ul>
                 <li><a href="index.html">About me</a></li>
-                <li><a href="projecten.html">Projecten</a></li>
+                <li><a href="projecten.html" class="active" aria-current="page">Projecten</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="cards-section">
-            <h2>Mijn Projecten</h2>
-            <p>Hieronder vind je een overzicht van de projecten waaraan ik werk tijdens mijn opleiding Software Engineering.</p>
-            
-            <div class="cards-container">
-                <article class="card">
-                    <h3> Portfolio Website</h3>
-                    <p>Daar zit je nu op ;)</p>
+   <main>
+    <section class="cards-section">
+        <h2>Mijn Projecten</h2>
+        <p>Hieronder vind je een overzicht van de projecten waaraan ik werk tijdens mijn opleiding Software Engineering.</p>
+        
+        <!-- Filter Knoppen -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-category="all">Alles</button>
+            <button class="filter-btn" data-category="Frontend">Frontend</button>
+            <button class="filter-btn" data-category="Backend">Backend</button>
+            <button class="filter-btn" data-category="Tooling">Tooling</button>
+        </div>
 
-                </article>
-                <article class="card">
-                    <h3> Toekomstig Project</h3>
-                    <p>Binnenkort beschikbaar!</p>
-
-                </article>
-                <article class="card">
-                    <h3> Toekomstig Project</h3>
-                    <p>Binnenkort beschikbaar!</p>
-
-                </article>
-            </div>
-        </section>
-    </main>
-
+        <!-- Dynamische container -->
+        <div id="projects-container" class="cards-container"></div>
+    </section>
+</main>
+         
     <footer>
         <p>&copy; 2026 Filip Wiśniowski - Alle rechten voorbehouden</p>
     </footer>
 
+    <script src="js/projects.js" defer></script>
 </body>
 </html>
