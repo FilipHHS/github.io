@@ -253,3 +253,59 @@ footer {
     border-color: #3b82f6;
     font-weight: 600;
 }
+/* Styling voor Blog artikelen */
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.blog-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.blog-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.blog-meta {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+}
+
+.blog-summary {
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+.blog-full-content {
+    color: #e2e8f0;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #334155;
+}
+
+.read-more-btn {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #2563eb;
+}

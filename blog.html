@@ -14,34 +14,26 @@
             <ul>
                 <li><a href="index.html">About me</a></li>
                 <li><a href="projecten.html">Projecten</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="blog.html" class="active" aria-current="page">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="blog-overview">
-            <h2>Mijn Blogposts</h2>
-            <p>Op deze pagina deel ik mijn leerervaringen en inzichten over software development.</p>
+        <section class="blog-section">
+            <h2>Mijn Blogs & Artikelen</h2>
+            <p>Hier deel ik mijn ervaringen, inzichten en voortgang tijdens de opleiding Software Engineering.</p>
 
-            <article class="blog-post">
-                <h3>Mijn eerste ervaringen met Git en HTML5</h3>
-                <p class="meta">Gepubliceerd op: <time datetime="2026-09-03">3 september 2026</time></p>
-                <p>Tijdens de eerste colleges van Web Programming & Frameworks (WPFW) zijn we aan de slag gegaan met de basis van semantische HTML5.</p>
-            </article>
-
-            <article class="blog-post">
-                <h3>Waarom toegankelijkheid (WCAG) belangrijk is</h3>
-                <p class="meta">Gepubliceerd op: <time datetime="2026-09-03">3 september 2026</time></p>
-                <p>Voldoende kleurcontrast (WCAG AA) en correcte alt-teksten zorgen ervoor dat iedereen de site kan gebruiken.</p>
-            </article>
+            <!-- Dynamische container waar JS de blogs in plaatst -->
+            <div id="blog-container" class="blog-list"></div>
         </section>
-
     </main>
 
     <footer>
         <p>&copy; 2026 Filip Wiśniowski - Alle rechten voorbehouden</p>
     </footer>
 
+    <!-- Koppel hier het JS bestand -->
+    <script src="js/blog.js" defer></script>
 </body>
 </html>
