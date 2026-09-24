@@ -1,42 +1,55 @@
-/* ==========================================
-   1. Reset & Basis (Met Sticky Footer FIX)
-   ========================================== */
+/* ==========================================================================
+   1. RESET & BASISINSTELLINGEN (Sticky Footer)
+   ========================================================================== */
+
+/* Zorgt voor consistente berekening van marges en paddings */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* 100vh zorgt dat de body altijd de volle hoogte van het scherm inneemt */
+/* 100vh zorgt dat de pagina altijd schermvullend is */
 html, body {
     min-height: 100vh;
 }
 
 body {
     display: flex;
-    flex-direction: column; /* Stapelt header, main en footer onder elkaar */
+    flex-direction: column; /* Stapelt header, main en footer verticaal */
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #222222;
-    background-color: #f4f4f4;
+    color: #1e293b;
+    background-color: #f1f5f9;
     padding: 1rem;
 }
 
-/* ==========================================
-   2. Header & Navigatie
-   ========================================== */
+/* Toegankelijke focus-rand voor toetsenbordgebruikers (WCAG AA) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 2px;
+}
+
+
+/* ==========================================================================
+   2. HEADER & NAVIGATIE
+   ========================================================================== */
+
 header {
-    background-color: #1a252f;
+    background-color: #0f172a;
     color: #ffffff;
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     text-align: center;
-    border-radius: 6px 6px 0 0;
+    border-radius: 8px 8px 0 0;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    flex-direction: column; /* Mobiel: onder elkaar */
+    flex-direction: column; /* Mobiele weergave: onder elkaar */
     gap: 0.5rem;
     margin-top: 1rem;
 }
@@ -53,23 +66,19 @@ nav a {
 
 nav a:hover,
 nav a.active {
-    background-color: #34495e;
+    background-color: #1e293b;
 }
 
 nav a.active {
     border-bottom: 3px solid #38bdf8;
 }
 
-/* Toegankelijkheid focus-state voor toetsenbord */
-a:focus-visible {
-    outline: 3px solid #38bdf8;
-    outline-offset: 2px;
-}
 
-/* ==========================================
-   3. Main & Footer Layout
-   ========================================== */
-/* flex: 1 duwt de footer automatisch naar de bodem op elk scherm */
+/* ==========================================================================
+   3. LAYOUT CONTAINER (MAIN & FOOTER)
+   ========================================================================== */
+
+/* flex: 1 drukt de footer automatisch naar de onderkant van het scherm */
 main {
     flex: 1;
     width: 100%;
@@ -77,20 +86,22 @@ main {
     margin: 0 auto 2rem auto;
     background: #ffffff;
     padding: 1.5rem;
-    border-radius: 0 0 6px 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 footer {
     text-align: center;
     padding: 1.5rem 1rem;
-    color: #555555;
+    color: #64748b;
     font-size: 0.9rem;
 }
 
-/* ==========================================
-   4. Introductie Sectie (Flexbox)
-   ========================================== */
+
+/* ==========================================================================
+   4. INTRODUCTIE & VAARDIGHEDEN (index.html)
+   ========================================================================== */
+
 .intro-container {
     display: flex;
     align-items: center;
@@ -115,126 +126,25 @@ footer {
     object-fit: cover;
 }
 
-/* ==========================================
-   5. Kaarten Sectie (Projecten & Overzicht)
-   ========================================== */
+
+/* ==========================================================================
+   5. PROJECTEN & FILTERKNOPPEN (projecten.html)
+   ========================================================================== */
+
 .cards-section {
     margin-top: 2rem;
 }
 
-.cards-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-}
-
-.card {
-    flex: 1;
-    min-width: 220px;
-    background-color: #1a252f;
-    color: #f4f4f4;
-    padding: 1.5rem;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #ffffff;
-}
-
-.card p {
-    margin-bottom: 1rem;
-}
-
-/* Knoppen in kaarten */
-.card-button {
-    display: inline-block;
-    align-self: flex-start;
-    margin-top: auto;
-    padding: 0.6rem 1.2rem;
-    background-color: #ffffff;
-    color: #1a252f;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.9rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-}
-
-.card-button:hover {
-    background-color: #e2e8f0;
-}
-
-/* ==========================================
-   6. Blog Sectie Stijlen
-   ========================================== */
-.blog-post {
-    background-color: #f8fafc;
-    border-left: 4px solid #1a252f;
-    padding: 1.2rem;
-    margin-top: 1.5rem;
-    border-radius: 0 6px 6px 0;
-}
-
-.blog-post h3 {
-    color: #1a252f;
-    margin-bottom: 0.3rem;
-}
-
-.blog-post .meta {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-bottom: 0.8rem;
-}
-
-/* ==========================================
-   7. Responsive Breekpunten (Altijd onderaan!)
-   ========================================== */
-
-/* Tablet (~768px en groter) */
-@media (min-width: 768px) {
-    body {
-        font-size: 1.05rem; /* Vul de pagina optisch mooier op */
-    }
-
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    main {
-        padding: 2.5rem;
-    }
-
-    footer {
-        padding: 2rem 1rem;
-        font-size: 0.95rem;
-    }
-}
-
-/* Desktop (>= 1024px) */
-@media (min-width: 1024px) {
-    main {
-        padding: 3rem;
-    }
-}
-/* Styling voor de Filterknoppen */
+/* Knoppenbalk voor categoriefilters */
 .filter-container {
     display: flex;
     gap: 0.75rem;
-    margin-bottom: 2rem;
+    margin: 1.5rem 0 2rem 0;
     flex-wrap: wrap;
 }
 
 .filter-btn {
-    background-color: #1e293b;
+    background-color: #0f172a;
     color: #ffffff;
     border: 1px solid #334155;
     padding: 0.5rem 1.25rem;
@@ -253,7 +163,68 @@ footer {
     border-color: #3b82f6;
     font-weight: 600;
 }
-/* Styling voor Blog artikelen */
+
+/* Flexbox grid voor projectkaarten */
+.cards-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.card {
+    flex: 1;
+    min-width: 260px;
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.card p {
+    margin-bottom: 1.25rem;
+    color: #cbd5e1;
+}
+
+/* Universele blauwe knop in de kaarten */
+.card-button {
+    display: inline-block;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.65rem 1.25rem;
+    background-color: #3b82f6;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.card-button:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+
+/* ==========================================================================
+   6. BLOGARTIKELEN (blog.html)
+   ========================================================================== */
+
 .blog-list {
     display: flex;
     flex-direction: column;
@@ -262,7 +233,7 @@ footer {
 }
 
 .blog-card {
-    background-color: #1e293b;
+    background-color: #0f172a;
     border: 1px solid #334155;
     padding: 1.5rem;
     border-radius: 8px;
@@ -270,8 +241,7 @@ footer {
 }
 
 .blog-card h3 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     color: #ffffff;
 }
 
@@ -298,14 +268,145 @@ footer {
     background-color: #3b82f6;
     color: #ffffff;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
+    padding: 0.55rem 1.15rem;
+    border-radius: 6px;
     cursor: pointer;
     margin-top: 1rem;
     font-size: 0.9rem;
+    font-weight: 600;
     transition: background-color 0.2s ease;
 }
 
 .read-more-btn:hover {
     background-color: #2563eb;
+}
+
+
+/* ==========================================================================
+   7. CONTACTFORMULIER & VALIDATIE (index.html)
+   ========================================================================== */
+
+.contact-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #0f172a;
+}
+
+/* Lichte invoervelden die netjes ogen op een witte pagina */
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    color: #0f172a;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-group textarea {
+    resize: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Rood kader bij ongeldige invoer */
+.form-group input.input-error,
+.form-group textarea.input-error {
+    border-color: #ef4444;
+    background-color: #fef2f2;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.85rem;
+    min-height: 0;
+}
+
+/* Blauwe verzendknop */
+.submit-btn {
+    background-color: #3b82f6;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Groen succesbericht na verzenden */
+.form-status.success {
+    margin-top: 1rem;
+    padding: 0.85rem;
+    background-color: #ecfdf5;
+    border: 1px solid #10b981;
+    color: #065f46;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+
+/* ==========================================================================
+   8. RESPONSIVE BREEKPUNTEN (Media Queries)
+   ========================================================================== */
+
+/* Tablet & Grotere schermen (vanaf 768px) */
+@media (min-width: 768px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    main {
+        padding: 2.5rem;
+    }
+
+    footer {
+        padding: 2rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Desktop schermen (vanaf 1024px) */
+@media (min-width: 1024px) {
+    main {
+        padding: 3rem;
+    }
 }
