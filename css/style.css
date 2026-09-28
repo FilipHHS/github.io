@@ -410,3 +410,25 @@ footer {
         padding: 3rem;
     }
 }
+/* Contactformulier validatiestijlen */
+.input-error {
+  border: 2px solid #e74c3c !important;
+  background-color: #fff6f6;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: block;
+}
+
+.success-message {
+  color: #27ae60;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #eafaf1;
+  border: 1px solid #27ae60;
+  border-radius: 4px;
+}
