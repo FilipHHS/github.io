@@ -10,7 +10,7 @@
 
     <header>
         <h1>Filip Wiśniowski</h1>
-        <nav>
+        <nav aria-label="Hoofdnavigatie">
             <ul>
                 <li><a href="index.html">About me</a></li>
                 <li><a href="projecten.html" class="active" aria-current="page">Projecten</a></li>
@@ -19,34 +19,33 @@
         </nav>
     </header>
 
-   <main>
-    <section class="cards-section">
-        <h2>Mijn Projecten</h2>
-        <p>Hieronder vind je een overzicht van de projecten waaraan ik werk tijdens mijn opleiding Software Engineering.</p>
-        
-        <!-- Filter Knoppen -->
-        <div class="filter-container">
-            <button class="filter-btn active" data-category="all">Alles</button>
-            <button class="filter-btn" data-category="Frontend">Frontend</button>
-            <button class="filter-btn" data-category="Backend">Backend</button>
-            <button class="filter-btn" data-category="Tooling">Tooling</button>
-        </div>
+    <main>
+        <section class="cards-section">
+            <h2>Mijn Projecten</h2>
+            <p>Hieronder vind je een overzicht van de projecten waaraan ik werk tijdens mijn opleiding Software Engineering.</p>
+            
+            <!-- Filter Knoppen -->
+            <div class="filter-container" role="toolbar" aria-label="Project categorie filter">
+                <button class="filter-btn active" data-category="all">Alles</button>
+                <button class="filter-btn" data-category="Frontend">Frontend</button>
+                <button class="filter-btn" data-category="Backend">Backend</button>
+                <button class="filter-btn" data-category="Tooling">Tooling</button>
+            </div>
 
-        <!-- Lokale projecten container -->
-        <div id="projects-container" class="cards-container"></div>
-    </section>
+            <!-- Lokale projecten container -->
+            <div id="projects-container" class="cards-container"></div>
+        </section>
 
-    <!-- NIEUW: Live GitHub API Sectie -->
-    <section class="cards-section" style="margin-top: 3rem;">
-        <h2>Live GitHub Repositories</h2>
-        <p>Onderstaande projecten worden live ingeladen via de GitHub API:</p>
+        <!-- Live GitHub API Sectie met toegankelijke laadstatus -->
+        <section class="cards-section" style="margin-top: 3rem;">
+            <h2>Live GitHub Repositories</h2>
+            <p>Onderstaande projecten worden live ingeladen via de GitHub API:</p>
 
-        <!-- Container voor API resultaten -->
-        <div id="github-container" class="cards-container">
-            <p class="loading-text">Repositories worden geladen...</p>
-        </div>
-    </section>
-</main>
+            <div id="github-container" class="cards-container" aria-live="polite">
+                <p id="github-status" class="loading-text">Repositories worden geladen...</p>
+            </div>
+        </section>
+    </main>
          
     <footer>
         <p>&copy; 2026 Filip Wiśniowski - Alle rechten voorbehouden</p>
